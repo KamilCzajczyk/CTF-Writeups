@@ -2,7 +2,7 @@
 
 #### This repository documents my walkthrough for the **Pickle Rick** CTF challenge on [TryHackMe](https://tryhackme.com/r/room/picklerick). 
 ---
-## Simple nmap enumeration
+#### I will be using *nmap* and *Dirbuster* to enumerate target, but we can also use my own tool [QuickEnumTool](https://github.com/KamilCzajczyk/QuickEnumTool).
 
 ![NMAP](imgs/nmap.png "nmap")
 
@@ -17,7 +17,7 @@ This is how the website looks
 ![home](imgs/home.png "home")
 
 
-Znalazłem interesujacy fragment kodu zródłowego, ktos zostawił komentarz który może sugerować login do serwisu `login: R1ckRul3s`
+Somebody left a comment that suggest that there is a user with `login: R1ckRul3s`
 
 
 ![home](imgs/home_comment.png "home")
@@ -60,10 +60,44 @@ First we read the `clue.txt` and `Sup3rS3cretPickl3Ingred.txt`, but there is a p
 sudo less clue.txt
 ```
 
+> [!NOTE]
+> We should look around file system for other flags
+
 ![supersecret](imgs/supersecret.png "supersecret")
 ```
 sudo less Sup3rS3cretPickl3Ingred.txt
 ```
 
 > [!IMPORTANT]
-> We obtained our first `FLAG 1 : mr. meeseek hair`
+> We obtained flag `FLAG 1 : mr. meeseek hair` !!!
+
+After checking home folder with `sudo ls /home` I found rick's home folder
+
+
+![lsrick](imgs/lsrick.png "lsrick")
+
+There seems to be next flag 
+
+Now we just need to read the file
+
+
+![2nd](imgs/2nd.png "2nd")
+
+```
+cd /home/rick ; grep . *
+```
+
+> [!IMPORTANT]
+> Next flag is `FLAG 2 : 1 jerry tear` !!!
+
+Now I check root folder with `sudo ls /root` and it seems there is another flag
+
+Next i use `sudo less /root/3rd.txt`
+
+
+![3rd](imgs/3rd.png "3rd")
+
+> [!IMPORTANT]
+> Last flag is `FLAG 3 : fleeb juice` !!!
+
+## MACHINE PWNED
