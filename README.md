@@ -7,9 +7,9 @@ This repository hosts a collection of write-ups from Capture The Flag (CTF) chal
 
 ## Challenges Table
 
-| Folder Name     | CTF Event     | Difficulty | Keywords               | Link                                             |
-|-----------------|---------------|------------|------------------------|--------------------------------------------------|
-| `Pickle Rick`   | TryHackMeLab  | Easy       | web, linux             |        [test](THM%20Pickle%20Rick)               |
+| Folder Name                          | CTF Event / Website    | Difficulty | Keywords               |
+|--------------------------------------|------------------------|------------|------------------------|
+|  [Pickle Rick](THM%20Pickle%20Rick)  | TryHackMe              | Easy       | `web`, `linux`       
 
 
 
