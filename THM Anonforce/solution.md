@@ -13,10 +13,12 @@ python3 cli.py 10.10.89.98 /usr/share/wordlists/dirb/common.txt
 Ports `21 ftp` and ` 22 ssh ` open
 
 
-I start from connecting to `FTP` 
+I start by connecting to `FTP` 
 
 
-```ftp 10.10.89.98```
+``` 
+ftp 10.10.89.98
+```
 
 
 I tried `name: anonymous password: anonymous` and succesfully logged to ftp as anonymous user
@@ -55,24 +57,31 @@ Usinn `johnny` to get hash and crack it
 
 ![johnny](imgs/johnny.png "johnny")
 
+Now we attack the hash with rockyou.txt
 
 ![johnny_res](imgs/johnny_res.png "johnny_res")
 
+Program found our hash to be `xbox360`
+
 Importing secret key with `passphrase: xbox360`
 
-``` gpg --import private.asc```
+``` 
+gpg --import private.asc
+```
 
 ![import](imgs/import.png "import")
 
 After importing a key, we can see the content of the backup.pgp
 
-``` gpg --decrypt backup.pgp ```
+``` 
+gpg --decrypt backup.pgp
+```
 
 ![shadow](imgs/shadow.png "shadow")
 
 This look like a copy of `/etc/shadow` file
 
-I will use `hashcat` to try crack `root` and `melodias` passwords
+I will use `hashcat` to try to crack `root` and `melodias` passwords
 
 ```
 hashcat -a 0 -m 1800 root_hash.txt /usr/share/wordlists/rockyou.txt 
