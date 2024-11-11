@@ -1,5 +1,5 @@
 # Pickle Rick CTF - TryHackMe Room
-
+# **!! SPOILERS !!**
 #### This repository documents my walkthrough for the **Pickle Rick** CTF challenge on [TryHackMe](https://tryhackme.com/r/room/picklerick). 
 ---
 #### I will be using *nmap* and *Dirbuster* to enumerate target, but we can also use my own tool [QuickEnumTool](https://github.com/KamilCzajczyk/QuickEnumTool).
