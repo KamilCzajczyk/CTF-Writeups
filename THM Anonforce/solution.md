@@ -43,6 +43,52 @@ There is also interesting folder called `notread`
 
 In this folder we see `backup.pgp` and `private.asc`
 
+`backup.pgp` file:
+
 ![backup](imgs/backup.png "backup")
 
+`private.asc` file:
+
 ![private](imgs/private.png "private")
+
+Usinn `johnny` to get hash and crack it 
+
+![johnny](imgs/johnny.png "johnny")
+
+
+![johnny_res](imgs/johnny_res.png "johnny_res")
+
+Importing secret key with `passphrase: xbox360`
+
+``` gpg --import private.asc```
+
+![import](imgs/import.png "import")
+
+After importing a key, we can see the content of the backup.pgp
+
+``` gpg --decrypt backup.pgp ```
+
+![shadow](imgs/shadow.png "shadow")
+
+This look like a copy of `/etc/shadow` file
+
+I will use `hashcat` to try crack `root` and `melodias` passwords
+
+```
+hashcat -a 0 -m 1800 root_hash.txt /usr/share/wordlists/rockyou.txt 
+```
+
+
+![cracked](imgs/cracked.png "cracked")
+
+> [!IMPORTANT]
+> Root  `password` : `hikari`
+
+Now I use `ssh root@IP` with newly found password `hikari` to login as root to machine
+
+![ssh](imgs/ssh.png "ssh")
+
+> [!IMPORTANT]
+> Second flag from `root.txt` : `f706456440c7af4187810c31c6cebdce`
+
+# MACHINE PWNED
