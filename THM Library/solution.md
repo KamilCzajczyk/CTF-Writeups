@@ -8,6 +8,8 @@ Nmap scan
 
 ![nmap](imgs/nmap.png "nmap")
 
+`22 ssh` and `80 http` ports open
+
 Main page: 
 
 ![page](imgs/page.png "page")
