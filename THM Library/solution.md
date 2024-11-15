@@ -37,3 +37,32 @@ SSH connection:
 > 
 > First flag from `user.txt` : `6d488cbb3f111d135722c33cb635f4ec`
 
+Using `sudo -l` to gain more info
+
+![sudol](imgs/sudol.png "sudol")
+
+The output of `sudo -l` shows that the user `meliodas` can run any Python interpreter `(/usr/bin/python*)` with the script `/home/meliodas/bak.py` as sudo without needing a password, potentially enabling privilege escalation if the script is modifiable.
+
+`Bak.py`:
+
+![bak](imgs/bak.png "bak")
+
+New `bak.py` will generate a `reverse shell` as `root`
+
+![newbak](imgs/newbak.png "newbak")
+
+Spawning reverse shell
+
+```
+sudo /usr/bin/python3 /home/meliodas/bak.py 
+
+```
+Root access and flag: 
+
+![rootaccess](imgs/rootaccess.png "rootaccess")
+
+
+> [!IMPORTANT]
+> Second flag from `root.txt` : `e8c8c6c256c35515d1d344ee0488c617`
+
+# MACHINE PWNED
