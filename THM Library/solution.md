@@ -14,6 +14,8 @@ Main page:
 
 ![page](imgs/page.png "page")
 
+The blog post author is `meliodas` which might suggest a `username` for ssh login is also meliodas
+
 `Robots.txt`:
 
 ![robots](imgs/robots.png "robots")
