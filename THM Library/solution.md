@@ -20,12 +20,13 @@ Main page:
 
 I will try to use `hydra` to try to login to `ssh` as meliodas
 
-```bash
+```
 hydra -l meliodas -P /usr/share/wordlists/rockyou.txt 10.10.127.137 ssh -t 4
-
 ```
 
 ![hydra](imgs/hydra.png "hydra")
+
+Hydra found a password : `iloveyou1`
 
 SSH connection:
 
@@ -49,13 +50,15 @@ The output of `sudo -l` shows that the user `meliodas` can run any Python interp
 
 New `bak.py` will generate a `reverse shell` as `root`
 
+
 ![newbak](imgs/newbak.png "newbak")
+
+Remember to use your own machine (the attacker) IP address and not the target machine in python script
 
 Spawning reverse shell
 
 ```
 sudo /usr/bin/python3 /home/meliodas/bak.py 
-
 ```
 Root access and flag: 
 
