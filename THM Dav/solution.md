@@ -8,6 +8,10 @@ Using nmap to scan for open ports
 
 Only `80 http` open
 
+Default Apache page 
+
+![default](imgs/default.png "default")
+
 Gobuster scan 
 
 ```
