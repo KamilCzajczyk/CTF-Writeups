@@ -28,6 +28,8 @@ We see directory with `passwd.dav` file
 
 ![dir](imgs/dir.png "dir")
 
+![passwd](imgs/passwd.png "passwd")
+
 Using cadaver 
 ```
 cadaver http://IP/webdav
@@ -78,3 +80,5 @@ sudo /bin/cat /root/root.txt
 > [!IMPORTANT]
 > Root flag from `root.txt` : `101101ddc16b0cdf65ba0b8a7af7afa5`
 
+
+# MACHINE PWNED
