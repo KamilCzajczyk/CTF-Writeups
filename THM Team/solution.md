@@ -25,6 +25,10 @@ Adding team.thm to /etc/hosts
 
 ![hosts1](imgs/hosts1.png "hosts1")
 
+team.thm webpage
+
+![team-web](imgs/team-web.png "team-web")
+
 Using gobuster again
 
 ```
@@ -79,6 +83,8 @@ Login to ssh with a private key as dale, remember to `chmod 600` key
 > [!IMPORTANT]
 > User flag from `user.txt`: `THM{6Y0TXHz7c2d}`
 
+![admin-checks](imgs/admin-checks.png "admin-checks")
+
 now we can do
 
 ```
@@ -95,9 +101,13 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 In /opt there is interesting folder `admin_stuff` that contains `script.sh`
 
+![script](imgs/script.png "script")
+
 Now i check those files mentioned in script.sh
 
-The main_backup.sh is writeable and executes as root
+The main_backup.sh is writeable
+
+![backup-priv](imgs/backup-priv.png "backup-priv")
 
 Now i edit main_backup to generate reverse shell as root, the script is run by cronjob every minute. **This privilege escalation stage could be done in various ways.**
 
