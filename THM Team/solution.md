@@ -8,12 +8,17 @@ Using nmap to find open ports
 
 Open ports `21 ftp`,`22 ssh` and `80 http`
 
+Using gobuster to find directories
+
 ```
 gobuster dir -w /snap/seclists/current/Discovery/Web-Content/common.txt -u http://10.10.130.165   
 ```
 No interesting directories
 
 Adding team.thm to /etc/hosts
+
+Using gobuster again
+
 ```
 gobuster dir -w /snap/seclists/current/Discovery/Web-Content/common.txt -u http://team.thm
 ```
@@ -21,12 +26,14 @@ gobuster dir -w /snap/seclists/current/Discovery/Web-Content/common.txt -u http:
 Gobuster found `robots.txt` with `dale` string 
 
 Using ffuf to enumerate vhosts
+
 ```
 ffuf -w /snap/seclists/current/Discovery/DNS/subdomains-top1million-20000.txt -u http://team.thm/ -H "Host: FUZZ.team.thm" -fs 11366
 ```
+
 Editing /etc/hosts again
 
-dev.team.thm
+dev.team.thm webpage
 
 
 
@@ -46,7 +53,7 @@ http://dev.team.thm/script.php?page=/etc/ssh/sshd_config
 
 Login to ssh with a private key as dale, remember to `chmod 600` key
 
->
+> [!IMPORTANT]
 > User flag from `user.txt`: `THM{6Y0TXHz7c2d}`
 
 now we can do
@@ -67,5 +74,7 @@ The main_backup.sh is writeable and executes as root
 
 Now i edit main_backup to generate reverse shell as root, the script is run by cronjob every minute. **This privilage escalation stage could be done in various ways. **
 
->
+> [!IMPORTANT]
 > Root flag from `root.txt`: `THM{fhqbznavfonq}`
+
+# MACHINE PWNED
