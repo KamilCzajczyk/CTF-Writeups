@@ -51,7 +51,7 @@ we succesfully login and get next note
 
 ![devnotes](imgs/devnotes.png "devnotes") 
 
-there should be ftp server on odd port so i will use diffrent tool to searh for it, i created simple go program to fast scan open ports
+there should be ftp server on odd port so i will use diffrent tool to searh for it, i created simple go program to fast scan open ports [SuperFastScanner](https://github.com/KamilCzajczyk/go-SuperFastScan)
 
 ![goscan](imgs/goscan.png "goscan")  
 
