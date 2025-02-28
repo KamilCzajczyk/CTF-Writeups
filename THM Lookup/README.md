@@ -1,3 +1,8 @@
+# Lookup CTF - TryHackMe Room
+# **!! SPOILERS !!**
+#### This repository documents my walkthrough for the **Lookup** CTF challenge on [TryHackMe](https://tryhackme.com/room/lookup). 
+---
+
 simple nmap scan to discover open ports
 
 ![nmap](img/nmap.png "nmap")
