@@ -89,7 +89,7 @@ there is a passphrase so i will try to crack it with john
 now
 
 ```
-john --wordlist=/usr/share/wordlists/rockyou.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 
 ![john](img/john.png "john")
