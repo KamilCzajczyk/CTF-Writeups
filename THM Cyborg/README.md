@@ -1,4 +1,7 @@
-
+# Cybrog CTF - TryHackMe Room
+# **!! SPOILERS !!**
+#### This repository documents my walkthrough for the **Cybrog** CTF challenge on [TryHackMe](https://tryhackme.com/room/cyborgt8). 
+---
 
 scanning and looking for hidden folders
 
