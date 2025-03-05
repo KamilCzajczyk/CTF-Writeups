@@ -35,6 +35,8 @@ after inputing `$ cat /etc/passwd` or `$ cd / ; ls` we are asked if we are hacke
 
 i tried few different techniques, `l\s` worked so ls is probably filtered, we also can use cd without filtering, `c\at index.php` also worked (I used BurpSuite)
 
+we need to use `c\at index.php` to see source code
+
 now we know exactly what commands are on blacklist: 
 
 ```php
@@ -121,7 +123,7 @@ echo "IWQwbnRLbjB3bVlwQHNzdzByZA==" | base64 -d
 
 finally we got access as anurodh
 
-![anurodh](img/anurodh.png "anurodh")
+![anurodth](img/anurodth.png "anurodth")
 
 i used linpeas once again and found that user anurodh is in docker group (95% PE factor) so i checked GTFObins, we can use this one-liner to gain root access
 
