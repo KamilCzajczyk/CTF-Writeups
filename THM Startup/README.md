@@ -1,6 +1,6 @@
 # Startup CTF - TryHackMe Room
 # **!! SPOILERS !!**
-#### This repository documents my walkthrough for the **Startup** CTF challenge on [TryHackMe](https://tryhackme.com/r/room/bsidesgtdav). 
+#### This repository documents my walkthrough for the **Startup** CTF challenge on [TryHackMe](https://tryhackme.com/room/startup). 
 ---
 
 scan 
