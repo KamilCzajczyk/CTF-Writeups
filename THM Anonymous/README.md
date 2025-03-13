@@ -51,6 +51,8 @@ i copied linpeas and found `/usr/bin/env` with SUID flag
 
 checked GTFObins for PE factor
 
+![gtfo](imgs/gtfo.png "gtfo")
+
 i used this one-liner to spawn root shell
 
 ```
