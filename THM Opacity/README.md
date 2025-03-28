@@ -55,7 +55,7 @@ we cracked the password for the keepass databse
 
 ![john](imgs/john.png "john")
 
-we now can use KeePass2 to open the database, provide master password, copy the sysadmin user password `Cl0udP4ss40p4city#8700`
+we now can use KeePass2 to open the database, provide master password, copy the sysadmin user password 
 
 now we can ssh as sysadmin and we have user flag
 
