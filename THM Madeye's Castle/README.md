@@ -23,7 +23,7 @@ admin' or 1=1 -- -
 
 we got note 
 
-![sql1](imgs/log.png "log")
+![sql1](imgs/sql1.png "sql1")
 
 ```
 The password for Lucas Washington is incorrect! contact administrator. Congrats on SQL injection... keep digging
