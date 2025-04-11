@@ -86,8 +86,6 @@ after looking around i found jason ssh private key in /home/jason/.ssh/id_rsa
 
 ![rsa](imgs/rsa.png "rsa")
 
-![rsa2](imgs/rsa2.png "rsa2")
-
 now we need do crack the passphrase
 
 ```
