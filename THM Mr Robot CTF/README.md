@@ -23,9 +23,11 @@ using gobuster to enumerate hidden folders
 
 the most interesting one is /wp-login suggesting the use of WordPress, using wpscan to enumerate users but it doesnt seem to work
 
-if we try to login manually we see the error: Invalid Error, we can try to use the dictionary file we found to test for potential username
+if we try to login manually we see the error: Invalid username
 
 ![er](imgs/er.png "er")
+
+we can try to use the dictionary file we found to test for potential username
 
 after using ZAP to fuzz the username we see that there could be users: elliot and Elliot
 
@@ -61,7 +63,7 @@ looking for ways to upload reverse shell file, we can use Appearance -> Editor a
 
 ![404](imgs/404.png "404")
 
-then we can go to http://IP/tttt and we should get our shell
+then we can go to `http://IP/tttt` and we should get our shell
 
 we got shell as daemon
 
