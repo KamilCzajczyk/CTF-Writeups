@@ -27,7 +27,7 @@ we also see(because we are now the admin) the API tab where we can see the other
 
 in settings we see a possibilty to update banner image by providing url
 
-![ap](imgs/ap.png "ap")
+![up](imgs/up.png "up")
 
 we now can try to access internal api by using url for localhost 127.0.0.1
 
