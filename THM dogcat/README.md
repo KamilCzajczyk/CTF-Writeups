@@ -41,7 +41,7 @@ Warning: include(dogsindex.php.php): failed to open stream: No such file or dire
 Warning: include(): Failed opening 'dogsindex.php.php' for inclusion (include_path='.:/usr/local/lib/php') in /var/www/html/index.php on line 24
 ```
 
-first we see that one .php was added to our path we tried to access
+first we see that one `.php` was added to our path that we tried to access
 
 we can try with some php wrappers
 
