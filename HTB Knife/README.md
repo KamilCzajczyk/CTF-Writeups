@@ -29,7 +29,7 @@ we can grab user flag
 
 by lookin at `sudo -l` output we see that we can run sudo on /usr/bin/knife
 
-![sdl](imgs/sdsl.png "sdl")
+![sdl](imgs/sdl.png "sdl")
 
 ![kn](imgs/kn.png "kn")
 
