@@ -37,8 +37,6 @@ we can now create the payload that will send reverse shell to us
 
 ![rs](imgs/rs.png "rs")
 
-![pr](imgs/pr.png "pr")
-
 we got reverse-shell access as wizard and we can grab user flag
 
 ![us](imgs/us.png "us")
