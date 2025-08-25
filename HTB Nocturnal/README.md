@@ -39,8 +39,6 @@ we see some file in amanda account called privacy.odt, we can try to donwload th
 
 we found some private message with password for user amanda, i tried to login to ssh but i didnt seem to work, but we can login as amanda to dashboard
 
-amanda:arHkG7HAI68X8s1J
-
 now we have access to admin panel
 
 ![pn](imgs/pn.png "pn")
@@ -80,8 +78,6 @@ we found some users and hashes, we can try to crack it using crackstation
 ![cr](imgs/cr.png "cr")
 
 we found tobias password, we can try to change user to tobias with this password
-
-tobias:slowmotionapocalypse
 
 it worked we have access as tobias and we can grab user flag
 
