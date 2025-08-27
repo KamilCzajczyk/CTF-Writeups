@@ -5,8 +5,6 @@
 
 we see open ports 22 and 5000 
 
-![scn](imgs/scn.png "scn")
-
 we have some python code editor, running basic reverse shell is of course filtered 
 
 ![f](imgs/f.png "f")
