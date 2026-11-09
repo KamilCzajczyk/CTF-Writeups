@@ -25,7 +25,7 @@ we got hit with reverse shell
 
 we see some `reactor.db` database that could have some useful data
 
-![db](db/db.png "db")
+![db](imgs/db.png "db")
 
 we got some hashes
 
